@@ -69,7 +69,6 @@ export default function AddVideoModal({
               <option value="Frontend">Frontend</option>
               <option value="Backend">Backend</option>
               <option value="DevOps">DevOps</option>
-              <option value="Database">Database</option>
               <option value="Other">Other</option>
             </select>
           </div>
