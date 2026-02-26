@@ -16,7 +16,7 @@ export const likeVideo = async (req, res) => {
     const video = await Video.findByIdAndUpdate(
       id,
       { $inc: { likes: 1 } },
-      { new: true },
+      { returnDocument: "after" },
     );
     if (!video) {
       return res.status(404).json({ message: "Video no encontrado" });
