@@ -1,7 +1,3 @@
-/**
- * Componente Banner de Error
- * Responsabilidad: Mostrar mensajes de error y botón para reintentar
- */
 export default function ErrorBanner({ error, onRetry }) {
   if (!error) return null;
 

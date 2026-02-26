@@ -1,7 +1,3 @@
-/**
- * Componente Header de la aplicación
- * Responsabilidad: Renderizar el header con marca y botón de agregar video
- */
 export default function AppHeader({ videosCount, onAddVideoClick }) {
   return (
     <header className="app-header">

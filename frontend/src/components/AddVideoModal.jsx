@@ -1,7 +1,3 @@
-/**
- * Componente Modal para agregar nuevo video
- * Responsabilidad: Renderizar el formulario de creación de videos
- */
 export default function AddVideoModal({
   showModal,
   formData,

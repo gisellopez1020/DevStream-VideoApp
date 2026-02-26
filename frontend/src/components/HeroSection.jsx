@@ -1,7 +1,3 @@
-/**
- * Componente Sección Hero
- * Responsabilidad: Renderizar la sección introductoria
- */
 export default function HeroSection() {
   return (
     <section className="hero-section">
