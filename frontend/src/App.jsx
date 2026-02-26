@@ -1,35 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import SearchBar from "./components/SearchBar";
+import VideoGrid from "./components/VideoGrid";
+import AppHeader from "./components/AppHeader";
+import AppFooter from "./components/AppFooter";
+import HeroSection from "./components/HeroSection";
+import ErrorBanner from "./components/ErrorBanner";
+import AddVideoModal from "./components/AddVideoModal";
+import { useVideos } from "./hooks/useVideos";
+import { useVideoForm } from "./hooks/useVideoForm";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const {
+    videos,
+    filteredVideos,
+    loading,
+    error,
+    searchTerm,
+    activeCategory,
+    handleLike,
+    setSearchTerm,
+    setActiveCategory,
+    addVideoToList,
+  } = useVideos();
+
+  const {
+    showModal,
+    formData,
+    creatingVideo,
+    openModal,
+    closeModal,
+    handleFormChange,
+    handleCreateVideo: handleSubmitForm,
+  } = useVideoForm(addVideoToList);
+
+  const handleCreateVideo = (e) => {
+    handleSubmitForm(e);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app">
+      <AppHeader videosCount={videos.length} onAddVideoClick={openModal} />
 
-export default App
+      <main className="app-main">
+        <HeroSection />
+
+        <SearchBar
+          searchTerm={searchTerm}
+          onSearchChange={setSearchTerm}
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+        />
+
+        <ErrorBanner error={error} onRetry={() => window.location.reload()} />
+
+        <AddVideoModal
+          showModal={showModal}
+          formData={formData}
+          creatingVideo={creatingVideo}
+          onClose={closeModal}
+          onFormChange={handleFormChange}
+          onSubmit={handleCreateVideo}
+        />
+
+        <VideoGrid
+          videos={filteredVideos}
+          loading={loading}
+          onLike={handleLike}
+          searchTerm={searchTerm}
+          activeCategory={activeCategory}
+        />
+      </main>
+
+      <AppFooter />
+    </div>
+  );
+}
