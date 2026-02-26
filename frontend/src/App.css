@@ -392,6 +392,15 @@
   font-family: inherit;
 }
 
+.form-group select {
+  background-color: var(--bg-deep);
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
+  appearance: none;
+  cursor: pointer;
+}
+
 .form-actions {
   display: flex;
   gap: 1rem;
