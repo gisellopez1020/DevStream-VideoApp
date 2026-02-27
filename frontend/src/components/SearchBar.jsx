@@ -1,4 +1,5 @@
 import "../styles/SearchBar.css";
+import { useState } from "react";
 
 const CATEGORIES = ["All", "Frontend", "Backend", "DevOps"];
 
@@ -8,6 +9,19 @@ export default function SearchBar({
   activeCategory,
   onCategoryChange,
 }) {
+  const [inputValue, setInputValue] = useState(searchTerm);
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onSearchChange(inputValue);
+    }
+  };
+
+  const handleClear = () => {
+    setInputValue("");
+    onSearchChange("");
+  };
+
   return (
     <div className="searchbar-wrapper">
       <div className="searchbar-row">
@@ -31,14 +45,15 @@ export default function SearchBar({
             type="text"
             className="search-input"
             placeholder="Buscar videos..."
-            value={searchTerm}
-            onChange={(e) => onSearchChange(e.target.value)}
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={handleKeyDown}
             aria-label="Buscar videos"
           />
-          {searchTerm && (
+          {inputValue && (
             <button
               className="search-clear"
-              onClick={() => onSearchChange("")}
+              onClick={handleClear}
               aria-label="Limpiar búsqueda"
             >
               ×
