@@ -1,3 +1,5 @@
+import "../styles/AppFooter.css";
+
 export default function AppFooter() {
   return (
     <footer className="app-footer">

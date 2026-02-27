@@ -1,3 +1,5 @@
+import "../styles/AddVideoModal.css";
+
 export default function AddVideoModal({
   showModal,
   formData,

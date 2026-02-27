@@ -86,6 +86,6 @@ body {
 }
 
 ::selection {
-  background: rgba(0, 230, 118, 0.2);
-  color: var(--accent-green);
+  background: rgba(184, 0, 230, 0.2);
+  color: var(--accent-pink);
 }

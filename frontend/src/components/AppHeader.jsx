@@ -1,3 +1,5 @@
+import "../styles/AppHeader.css";
+
 export default function AppHeader({ videosCount, onAddVideoClick }) {
   return (
     <header className="app-header">

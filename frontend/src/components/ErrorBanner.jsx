@@ -1,3 +1,5 @@
+import "../styles/ErrorBanner.css";
+
 export default function ErrorBanner({ error, onRetry }) {
   if (!error) return null;
 
