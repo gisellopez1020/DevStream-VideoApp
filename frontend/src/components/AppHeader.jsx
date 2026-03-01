@@ -5,7 +5,9 @@ export default function AppHeader({ videosCount, onAddVideoClick }) {
     <header className="app-header">
       <div className="header-inner">
         <div className="brand">
-          <span className="brand-icon">▶</span>
+          <span className="brand-icon">
+            <img src="/src/assets/logo.svg" alt="DevStream Logo" />
+          </span>
           <div className="brand-text">
             <span className="brand-name">DevStream</span>
             <span className="brand-tagline">// academia de código</span>

@@ -38,7 +38,9 @@ export default function VideoGrid({
   if (videos.length === 0) {
     return (
       <div className="empty-state">
-        <span className="empty-icon">◉</span>
+        <span className="empty-icon">
+          <img src="/src/assets/empty-state.svg" alt="Sin resultados" />
+        </span>
         <p className="empty-title">Sin resultados</p>
         <p className="empty-sub">
           No hay videos
