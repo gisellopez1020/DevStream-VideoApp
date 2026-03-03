@@ -29,6 +29,25 @@ Aplicación web para gestionar y visualizar una colección de videos académicos
 - npm o yarn
 - MongoDB
 
+## Variables de entorno
+
+### Backend
+
+Crear archivo `.env` en la carpeta `backend/`:
+
+```
+DB_URI=mongodb://localhost:27017/devstream
+PORT=3000
+```
+
+### Frontend
+
+Crear archivo `.env` en la carpeta `frontend/`:
+
+```
+API_URL=http://localhost:3000
+```
+
 ## Instalación y ejecución
 
 ### Backend
