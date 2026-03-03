@@ -36,7 +36,7 @@ Aplicación web para gestionar y visualizar una colección de videos académicos
 Crear archivo `.env` en la carpeta `backend/`:
 
 ```
-DB_URI=mongodb://localhost:27017/devstream
+MONGO_DB_URI=mongodb://localhost:27017/devstream
 PORT=3000
 ```
 
@@ -45,7 +45,7 @@ PORT=3000
 Crear archivo `.env` en la carpeta `frontend/`:
 
 ```
-API_URL=http://localhost:3000
+VITE_API_URL=http://localhost:3000
 ```
 
 ## Instalación y ejecución
