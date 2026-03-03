@@ -1,4 +1,4 @@
-# DevStream MVP
+# DevStream MVP ▶️
 
 Aplicación web para gestionar y visualizar una colección de videos académicos categorizados en Frontend, Backend y DevOps con búsqueda integrada.
 
@@ -11,13 +11,13 @@ Aplicación web para gestionar y visualizar una colección de videos académicos
 
 ## Tecnologías
 
-**Backend:**
+**Backend 🖥️:**
 
 - Node.js + Express
 - MongoDB (modelos)
 - Middleware de logging
 
-**Frontend:**
+**Frontend 🎨:**
 
 - React 18
 - Vite
@@ -27,6 +27,7 @@ Aplicación web para gestionar y visualizar una colección de videos académicos
 
 - Node.js (v14 o superior)
 - npm o yarn
+- MongoDB
 
 ## Instalación y ejecución
 
@@ -50,7 +51,7 @@ npm run dev
 
 Aplicación disponible en `http://localhost:5173`
 
-## Estructura del proyecto
+## Estructura del proyecto 📁
 
 ```
 ├── backend/          # Servidor Express
